@@ -11,12 +11,6 @@ const THead = () => {
         <th
           className="text-white px-3 py-2"
         >Lastname</th>
-        <th
-          className="text-white px-3 py-2"
-        >Gender</th>
-        <th
-          className="text-white px-3 py-2"
-        >Birthday</th>
       </tr>
     </thead>
   );

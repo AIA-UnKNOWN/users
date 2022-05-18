@@ -22,12 +22,6 @@ const UsersTable = () => {
               <td
                 className="px-3 py-2 border-bottom border-secondary"
               >{user.lastName}</td>
-              <td
-                className="px-3 py-2 border-bottom border-secondary"
-              >{user.gender}</td>
-              <td
-                className="px-3 py-2 border-bottom border-secondary"
-              >{user.birthday}</td>
             </tr>
           ))}
         </tbody>

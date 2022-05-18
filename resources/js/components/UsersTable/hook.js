@@ -11,7 +11,9 @@ const useUsersTable = () => {
     });
   }, []);
 
-  return { users };
+  useEffect(() => {}, [users]);
+
+  return { users, setUsers };
 }
 
 export default useUsersTable;
