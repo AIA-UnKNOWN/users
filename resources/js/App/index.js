@@ -1,11 +1,9 @@
-import React from 'react';
+import UsersTable from '@components/UsersTable';
 
 const App = () => {
   return (
-    <div>
-      <div className="container">
-        <p className="text-success">Hello Users App</p>
-      </div>
+    <div className="container">
+      <UsersTable />
     </div>
   );
 }

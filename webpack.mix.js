@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const { resolve } = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,3 +16,8 @@ mix.js('resources/js/index.js', 'public/js').react()
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+
+mix.alias({
+    '@components': resolve(__dirname, 'resources', 'js', 'components'),
+    '@APIs': resolve(__dirname, 'resources', 'js', 'APIs'),
+})
