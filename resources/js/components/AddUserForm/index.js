@@ -5,6 +5,7 @@ const AddUserForm = () => {
   const {
     firstname, setFirstname,
     lastname, setLastname,
+    firstnameError, lastnameError,
     addNewUser
   } = useAddUserForm();
 
@@ -18,6 +19,7 @@ const AddUserForm = () => {
           value={firstname}
           onChange={e => setFirstname(e.target.value)}
         />
+        <span className="text-danger mb-3">{firstnameError}</span>
         <TextInput
           label="Lastname"
           id="lastname"
@@ -25,6 +27,7 @@ const AddUserForm = () => {
           value={lastname}
           onChange={e => setLastname(e.target.value)}
         />
+        <span className="text-danger mb-3">{lastnameError}</span>
         <div className="mt-3">
           <button
             type="button"
