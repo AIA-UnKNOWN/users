@@ -1,3 +1,5 @@
+import logUserRequest from '@APIs/logger/userRequest';
+
 const URL = '/api/add-user';
 
 export default async ({ firstname, lastname }, callback) => {
@@ -14,8 +16,11 @@ export default async ({ firstname, lastname }, callback) => {
         lastName: lastname
       })
     });
-    callback(await response.json());
+    const data = await response.json();
+    callback(data);
+    logUserRequest(URL, data);
   } catch (error) {
     console.error(error);
+    logUserRequest(URL, error);
   }
 }

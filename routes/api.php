@@ -17,3 +17,4 @@ use App\Http\Controllers;
 
 Route::get('/users', Controllers\UsersController::class);
 Route::post('/add-user', Controllers\AddUserController::class);
+Route::post('/log', Controllers\Log\AddController::class);

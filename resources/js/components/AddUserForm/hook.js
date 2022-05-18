@@ -21,11 +21,20 @@ const useAddUserForm = () => {
     return Object.keys(error).length === 0;
   }
 
+  const clearInputs = () => {
+    setFirstname('');
+    setLastname('');
+  }
+
   const addNewUser = () => {
     if (!validate()) return;
-    addUser({ firstname, lastname }, response => {
+    addUser({
+      firstname: firstname.replaceAll('', ' '),
+      lastname: lastname.replaceAll('', ' ')
+    }, response => {
       if (response === 201) getUsers(users => {
         dispatch(setUsers(users));
+        clearInputs();
       });
     });
   }
