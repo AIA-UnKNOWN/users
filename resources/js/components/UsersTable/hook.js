@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
+import { setUsers } from '@reducers/usersSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 import getUsers from '@APIs/getUsers';
 
 const useUsersTable = () => {
-  const [users, setUsers] = useState([]);
+  const users = useSelector(state => state.users.users);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getUsers(users => {
-      setUsers(users);
+      dispatch(setUsers(users));
     });
   }, []);
 
-  useEffect(() => {}, [users]);
-
-  return { users, setUsers };
+  return { users };
 }
 
 export default useUsersTable;

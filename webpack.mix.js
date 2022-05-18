@@ -21,4 +21,5 @@ mix.alias({
     '@components': resolve(__dirname, 'resources', 'js', 'components'),
     '@APIs': resolve(__dirname, 'resources', 'js', 'APIs'),
     '@common': resolve(__dirname, 'resources', 'js', 'common'),
+    '@reducers': resolve(__dirname, 'resources', 'js', 'reducers'),
 })

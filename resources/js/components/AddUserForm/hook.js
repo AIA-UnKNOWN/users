@@ -1,18 +1,19 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setUsers } from '@reducers/usersSlice';
 
 import addUser from '@APIs/addUser';
 import getUsers from '@APIs/getUsers';
-import useUsersTable from '../UsersTable/hook';
 
 const useAddUserForm = () => {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
-  const { setUsers } = useUsersTable();
+  const dispatch = useDispatch();
 
   const addNewUser = () => {
     addUser({ firstname, lastname }, response => {
       if (response === 201) getUsers(users => {
-        setUsers(users);
+        dispatch(setUsers(users));
       });
     });
   }
